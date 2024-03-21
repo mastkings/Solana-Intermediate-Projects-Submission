@@ -97,7 +97,7 @@ pub fn process_instruction(
     Ok(())
 }
 
-// Sum function
+// Summasion function
 pub fn calculate_sum(account: &mut CalculatorAccount, num1: f64, num2: f64) {
     account.result = num1 + num2;
 }

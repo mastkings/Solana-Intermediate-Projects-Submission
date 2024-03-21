@@ -1,0 +1,16 @@
+[features]
+seeds = false
+skip-lint = false
+[programs.localnet]
+staking_program = "4wNomB8Ncca1ddQTSp9V9L4tV8bkS4nkHHWyMBZSTFNQ"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+# cluster = "https://api.devnet.solana.com"
+cluster = "Localnet"
+wallet = "wallet.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"

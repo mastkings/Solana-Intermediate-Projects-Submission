@@ -1,0 +1,22 @@
+[package]
+name = "nft-staking-program"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "nft_staking_program"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = {version = "0.28.0", features = ["init-if-needed"]}
+anchor-spl = "0.28.0"
+mpl-token-metadata = {version="1.6.4", features=["no-entrypoint"]}
+solana-program = "1.10.41"

@@ -1,7 +1,7 @@
 use anchor_lang::prelude::*;
 
 // Declare the program ID
-declare_id!("9vVwobbUQKqweePif76gvLBgg3uR12P8Ssae2x73kkFp");
+declare_id!("3hm4HqNpuCTE32gov2kwXmQ76feWVYfyM2NA2wGoSKNs");
 
 // Define the counter_program module
 #[program]
@@ -24,7 +24,7 @@ pub mod counter_program {
         Ok(())
     }
 
-    // Decrement method to decrease the count by 1
+    // Decrement method to decrease the value by 1
     pub fn decrement(ctx: Context<Decrement>) -> Result<()> {
         // Decrement the count by 1
         ctx.accounts.counter.count -= 1;
@@ -32,7 +32,7 @@ pub mod counter_program {
     }    
 }
 
-// Struct to define the accounts required for the Create method
+// This Struct to define the accounts required for the Create method
 #[derive(Accounts)]
 pub struct Create<'info> {
     #[account(init, payer = authority, space = 8 + 8 + 32)]
@@ -43,7 +43,7 @@ pub struct Create<'info> {
 }
 
 
-// Struct to define the accounts required for the Increment method
+// This Struct to define the accounts required for the Increment method
 #[derive(Accounts)]
 pub struct Increment<'info> {
     #[account(mut, has_one = authority)]
@@ -51,7 +51,7 @@ pub struct Increment<'info> {
     pub authority: Signer<'info>,
 }
 
-// Struct to define the accounts required for the Decrement method
+// This Struct to define the accounts required for the Decrement method
 #[derive(Accounts)]
 pub struct Decrement<'info> {
     #[account(mut, has_one = authority)]
@@ -59,7 +59,7 @@ pub struct Decrement<'info> {
     pub authority: Signer<'info>,
 }
 
-// Struct to represent the counter account
+// This Struct to represent the counter account
 #[account]
 pub struct Counter {
     pub authority: Pubkey,
